@@ -1,3 +1,14 @@
 *.idea
 *__py_cache__
-Hamner2013Running/Raw
+
+Hamner2013Running/Raw/**/cmc*
+Hamner2013Running/Raw/**/IAA*
+Hamner2013Running/Raw/**/ik
+Hamner2013Running/Raw/**/scale
+
+Uhlrich2022OpenCap/Raw/**/EMGData
+Uhlrich2022OpenCap/Raw/**/MarkerData/Video
+Uhlrich2022OpenCap/Raw/**/OpenSimData/Video
+Uhlrich2022OpenCap/Raw/**/OpenSimData/Mocap/JR
+Uhlrich2022OpenCap/Raw/**/OpenSimData/Mocap/SO
+Uhlrich2022OpenCap/Raw/**/OpenSimData/Mocap/Model
