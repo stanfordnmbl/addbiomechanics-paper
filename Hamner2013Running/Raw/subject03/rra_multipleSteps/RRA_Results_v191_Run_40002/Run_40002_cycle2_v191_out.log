@@ -1,0 +1,931 @@
+Copyright (c) 2013, Stanford University
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
+
+Please cite: Hamner, S.R., Delp, S.L. (2013) Muscle contributions to fore-aft and vertical body mass center accelerations 
+over a range of running speeds. Journal of Biomechanics, vol 46, pp 780-787.
+
+-------------------------------------------------------
+This program includes software developed by the
+Apache Software Foundation (http://www.apache.org/).
+-------------------------------------------------------
+
+
+-------------------------------------------------------
+Library SimbodyEngine...
+-------------------------------------------------------
+
+Constructing investigation from setup file subject03_Setup_RRA_Run_40002_cycle2_v191.xml.
+
+AbstractTool subject03_Run_40002_cycle2 loading model '../../scale/subject03_scaled_v191.osim'
+Created model subject03_scaled from file ../../scale/subject03_scaled_v191.osim
+Adding actuator set from ../gait2392_RRA_Actuators_v191.xml
+-----------------------------------------------------------------------
+Loaded library
+-----------------------------------------------------------------------
+             MODEL: subject03_scaled
+         actuators: 29
+          analyses: 0
+          contacts: 0
+-----------------------------------------------------------------------
+
+Running tool subject03_Run_40002_cycle2.
+MODEL: subject03_scaled
+
+ANALYSES (0)
+
+BODIES (21)
+body[0] = ground (mass: 0) (inertia: 0 0 0 0 0 0 0 0 0)
+body[1] = pelvis (mass: 10.028) (inertia: 0.106012 0 0 0 0.106012 0 0 0 0.051564)
+body[2] = femur_r (mass: 7.92005) (inertia: 0.136098 0 0 0 0.0356762 0 0 0 0.143518)
+body[3] = tibia_r (mass: 3.1569) (inertia: 0.051132 0 0 0 0.00422097 0 0 0 0.051132)
+body[4] = talus_r (mass: 0.085149) (inertia: 0.00095295 0 0 0 0.00095295 0 0 0 0.00095295)
+body[5] = calcn_r (mass: 1.06436) (inertia: 0.00133413 0 0 0 0.0037165 0 0 0 0.00390708)
+body[6] = toes_r (mass: 0.184433) (inertia: 9.529e-005 0 0 0 0.00019059 0 0 0 0.00095295)
+body[7] = femur_l (mass: 7.92005) (inertia: 0.136098 0 0 0 0.0356762 0 0 0 0.143518)
+body[8] = tibia_l (mass: 3.1569) (inertia: 0.051132 0 0 0 0.00422097 0 0 0 0.051132)
+body[9] = talus_l (mass: 0.085149) (inertia: 0.00095295 0 0 0 0.00095295 0 0 0 0.00095295)
+body[10] = calcn_l (mass: 1.06436) (inertia: 0.00133413 0 0 0 0.0037165 0 0 0 0.00390708)
+body[11] = toes_l (mass: 0.184433) (inertia: 9.529e-005 0 0 0 0.00019059 0 0 0 0.00095295)
+body[12] = torso (mass: 22.8426) (inertia: 1.38267 0 0 0 0.708449 0 0 0 1.34226)
+body[13] = humerus_r (mass: 1.73065) (inertia: 0.0119119 0 0 0 0.00410924 0 0 0 0.0133708)
+body[14] = ulna_r (mass: 0.51728) (inertia: 0.00305027 0 0 0 0.00063642 0 0 0 0.00330875)
+body[15] = radius_r (mass: 0.51728) (inertia: 0.00305027 0 0 0 0.00063642 0 0 0 0.00330875)
+body[16] = hand_r (mass: 0.389557) (inertia: 0.00091858 0 0 0 0.0005633 0 0 0 0.00137993)
+body[17] = humerus_l (mass: 1.73065) (inertia: 0.0119119 0 0 0 0.00410924 0 0 0 0.0133708)
+body[18] = ulna_l (mass: 0.51728) (inertia: 0.00305027 0 0 0 0.00063642 0 0 0 0.00330875)
+body[19] = radius_l (mass: 0.51728) (inertia: 0.00305027 0 0 0 0.00063642 0 0 0 0.00330875)
+body[20] = hand_l (mass: 0.389557) (inertia: 0.00091858 0 0 0 0.0005633 0 0 0 0.00137993)
+
+ACTUATORS (29)
+actuator[0] = FX (controls: FX.excitation)
+actuator[1] = FY (controls: FY.excitation)
+actuator[2] = FZ (controls: FZ.excitation)
+actuator[3] = MX (controls: MX.excitation)
+actuator[4] = MY (controls: MY.excitation)
+actuator[5] = MZ (controls: MZ.excitation)
+actuator[6] = hip_flexion_r (controls: hip_flexion_r.excitation)
+actuator[7] = hip_adduction_r (controls: hip_adduction_r.excitation)
+actuator[8] = hip_rotation_r (controls: hip_rotation_r.excitation)
+actuator[9] = knee_angle_r (controls: knee_angle_r.excitation)
+actuator[10] = ankle_angle_r (controls: ankle_angle_r.excitation)
+actuator[11] = hip_flexion_l (controls: hip_flexion_l.excitation)
+actuator[12] = hip_adduction_l (controls: hip_adduction_l.excitation)
+actuator[13] = hip_rotation_l (controls: hip_rotation_l.excitation)
+actuator[14] = knee_angle_l (controls: knee_angle_l.excitation)
+actuator[15] = ankle_angle_l (controls: ankle_angle_l.excitation)
+actuator[16] = lumbar_extension (controls: lumbar_extension.excitation)
+actuator[17] = lumbar_bending (controls: lumbar_bending.excitation)
+actuator[18] = lumbar_rotation (controls: lumbar_rotation.excitation)
+actuator[19] = arm_flex_r (controls: arm_flex_r.excitation)
+actuator[20] = arm_add_r (controls: arm_add_r.excitation)
+actuator[21] = arm_rot_r (controls: arm_rot_r.excitation)
+actuator[22] = elbow_flex_r (controls: elbow_flex_r.excitation)
+actuator[23] = pro_sup_r (controls: pro_sup_r.excitation)
+actuator[24] = arm_flex_l (controls: arm_flex_l.excitation)
+actuator[25] = arm_add_l (controls: arm_add_l.excitation)
+actuator[26] = arm_rot_l (controls: arm_rot_l.excitation)
+actuator[27] = elbow_flex_l (controls: elbow_flex_l.excitation)
+actuator[28] = pro_sup_l (controls: pro_sup_l.excitation)
+
+CONTACTS (0)
+numControls = 29
+numStates = 74
+numCoordinates = 37
+numSpeeds = 37
+numActuators = 29
+numBodies = 21
+numConstraints = 0
+
+STATES (74)
+y[0] = pelvis_tilt
+y[1] = pelvis_list
+y[2] = pelvis_rotation
+y[3] = pelvis_tx
+y[4] = pelvis_ty
+y[5] = pelvis_tz
+y[6] = hip_flexion_r
+y[7] = hip_adduction_r
+y[8] = hip_rotation_r
+y[9] = knee_angle_r
+y[10] = ankle_angle_r
+y[11] = subtalar_angle_r
+y[12] = mtp_angle_r
+y[13] = hip_flexion_l
+y[14] = hip_adduction_l
+y[15] = hip_rotation_l
+y[16] = knee_angle_l
+y[17] = ankle_angle_l
+y[18] = subtalar_angle_l
+y[19] = mtp_angle_l
+y[20] = lumbar_extension
+y[21] = lumbar_bending
+y[22] = lumbar_rotation
+y[23] = arm_flex_r
+y[24] = arm_add_r
+y[25] = arm_rot_r
+y[26] = elbow_flex_r
+y[27] = pro_sup_r
+y[28] = wrist_flex_r
+y[29] = wrist_dev_r
+y[30] = arm_flex_l
+y[31] = arm_add_l
+y[32] = arm_rot_l
+y[33] = elbow_flex_l
+y[34] = pro_sup_l
+y[35] = wrist_flex_l
+y[36] = wrist_dev_l
+y[37] = pelvis_tilt_u
+y[38] = pelvis_list_u
+y[39] = pelvis_rotation_u
+y[40] = pelvis_tx_u
+y[41] = pelvis_ty_u
+y[42] = pelvis_tz_u
+y[43] = hip_flexion_r_u
+y[44] = hip_adduction_r_u
+y[45] = hip_rotation_r_u
+y[46] = knee_angle_r_u
+y[47] = ankle_angle_r_u
+y[48] = subtalar_angle_r_u
+y[49] = mtp_angle_r_u
+y[50] = hip_flexion_l_u
+y[51] = hip_adduction_l_u
+y[52] = hip_rotation_l_u
+y[53] = knee_angle_l_u
+y[54] = ankle_angle_l_u
+y[55] = subtalar_angle_l_u
+y[56] = mtp_angle_l_u
+y[57] = lumbar_extension_u
+y[58] = lumbar_bending_u
+y[59] = lumbar_rotation_u
+y[60] = arm_flex_r_u
+y[61] = arm_add_r_u
+y[62] = arm_rot_r_u
+y[63] = elbow_flex_r_u
+y[64] = pro_sup_r_u
+y[65] = wrist_flex_r_u
+y[66] = wrist_dev_r_u
+y[67] = arm_flex_l_u
+y[68] = arm_add_l_u
+y[69] = arm_rot_l_u
+y[70] = elbow_flex_l_u
+y[71] = pro_sup_l_u
+y[72] = wrist_flex_l_u
+y[73] = wrist_dev_l_u
+
+
+WARN- a desired points file was not specified.
+
+
+
+Loading desired kinematics from file D:\RackSpaceSync\nmbl_running\OpenSimResults\subject03\ik\Results_191\Run_40002.mot ...
+Storage: file=D:\RackSpaceSync\nmbl_running\OpenSimResults\subject03\ik\Results_191\Run_40002.mot (nr=540 nc=173)
+
+
+Low-pass filtering desired kinematics with a cutoff frequency of 15...
+
+
+
+Loading external loads kinematics from file D:\RackSpaceSync\nmbl_running\OpenSimResults\subject03\ik\Results_191\Run_40002.mot ...
+Storage: file=D:\RackSpaceSync\nmbl_running\OpenSimResults\subject03\ik\Results_191\Run_40002.mot (nr=540 nc=173)
+Low-pass filtering external load kinematics with a cutoff frequency of 15...
+Storage: file=D:\RackSpaceSync\nmbl_running\HPL_Data\Hamner_Test\subject03\Session 1\ExportedData\Run_400 02_newCOP3.mot (nr=10781 nc=19)
+
+Note: requested COM adjustment time range 0.755 - 1.4035 clamped to nearest available data times 0.75 - 1.4
+
+Computing average residuals between 0.75 and 1.4
+Average residuals before adjusting torso COM:
+FX=0.766282 FY=-13.7113 FZ=-3.36791
+MX=1.42475 MY=-0.501838 MZ=-8.81484
+
+CMCTool.adjustCOMToReduceResiduals:
+torso weight = 224.009
+dx=-0.0393504, dz=-0.00636024
+
+dmass = 1.39816
+
+Recommended mass adjustments:
+ground:  orig mass = 0, new mass = 0
+pelvis:  orig mass = 10.028, new mass = 10.2471
+femur_r:  orig mass = 7.92005, new mass = 8.09307
+tibia_r:  orig mass = 3.1569, new mass = 3.22586
+talus_r:  orig mass = 0.085149, new mass = 0.0870091
+calcn_r:  orig mass = 1.06436, new mass = 1.08761
+toes_r:  orig mass = 0.184433, new mass = 0.188462
+femur_l:  orig mass = 7.92005, new mass = 8.09307
+tibia_l:  orig mass = 3.1569, new mass = 3.22586
+talus_l:  orig mass = 0.085149, new mass = 0.0870091
+calcn_l:  orig mass = 1.06436, new mass = 1.08761
+toes_l:  orig mass = 0.184433, new mass = 0.188462
+torso:  orig mass = 22.8426, new mass = 23.3416
+humerus_r:  orig mass = 1.73065, new mass = 1.76846
+ulna_r:  orig mass = 0.51728, new mass = 0.52858
+radius_r:  orig mass = 0.51728, new mass = 0.52858
+hand_r:  orig mass = 0.389557, new mass = 0.398067
+humerus_l:  orig mass = 1.73065, new mass = 1.76846
+ulna_l:  orig mass = 0.51728, new mass = 0.52858
+radius_l:  orig mass = 0.51728, new mass = 0.52858
+hand_l:  orig mass = 0.389557, new mass = 0.398067
+
+Computing average residuals between 0.75 and 1.4
+Average residuals after adjusting torso COM:
+FX=0.852696 FY=-13.7547 FZ=-3.67515
+MX=-0.390211 MY=-0.528799 MZ=-0.154461
+
+
+Constructing function set for tracking desired kinematics...
+
+No Actuation analysis found in analysis set -- adding one
+No Kinematics analysis found in analysis set -- adding one
+
+
+ taskSet size = 29
+
+Using the generalized coordinates specified in D:\RackSpaceSync\nmbl_running\OpenSimResults\subject03\ik\Results_191\Run_40002.mot to set the initial configuration.
+Successfully linked to CFSQP library 'osimCFSQP.dll'
+Using CFSQP optimizer algorithm.
+
+Setting optimizer print level to 0.
+Setting optimizer convergence criterion to 1e-006.
+Setting optimizer maximum iterations to 1000.
+
+Setting cmc controller to not use verbose printing.
+
+
+
+================================================================
+================================================================
+Using CMC to track the specified kinematics
+Integrating from 0.755 to 1.4035
+Start time = Tue Dec 20 18:43:02 2011
+================================================================
+rdCMC.computeControls:  t = 0.755
+rdCMC.computeControls:  t = 0.756
+rdCMC.computeControls:  t = 0.757
+rdCMC.computeControls:  t = 0.758
+rdCMC.computeControls:  t = 0.759
+rdCMC.computeControls:  t = 0.76
+rdCMC.computeControls:  t = 0.761
+rdCMC.computeControls:  t = 0.762
+rdCMC.computeControls:  t = 0.763
+rdCMC.computeControls:  t = 0.764
+rdCMC.computeControls:  t = 0.765
+rdCMC.computeControls:  t = 0.766
+rdCMC.computeControls:  t = 0.767
+rdCMC.computeControls:  t = 0.768
+rdCMC.computeControls:  t = 0.769
+rdCMC.computeControls:  t = 0.77
+rdCMC.computeControls:  t = 0.771
+rdCMC.computeControls:  t = 0.772
+rdCMC.computeControls:  t = 0.773
+rdCMC.computeControls:  t = 0.774
+rdCMC.computeControls:  t = 0.775
+rdCMC.computeControls:  t = 0.776
+rdCMC.computeControls:  t = 0.777
+rdCMC.computeControls:  t = 0.778
+rdCMC.computeControls:  t = 0.779
+rdCMC.computeControls:  t = 0.78
+rdCMC.computeControls:  t = 0.781
+rdCMC.computeControls:  t = 0.782
+rdCMC.computeControls:  t = 0.783
+rdCMC.computeControls:  t = 0.784
+rdCMC.computeControls:  t = 0.785
+rdCMC.computeControls:  t = 0.786
+rdCMC.computeControls:  t = 0.787
+rdCMC.computeControls:  t = 0.788
+rdCMC.computeControls:  t = 0.789
+rdCMC.computeControls:  t = 0.79
+rdCMC.computeControls:  t = 0.791
+rdCMC.computeControls:  t = 0.792
+rdCMC.computeControls:  t = 0.793
+rdCMC.computeControls:  t = 0.794
+rdCMC.computeControls:  t = 0.795
+rdCMC.computeControls:  t = 0.796
+rdCMC.computeControls:  t = 0.797
+rdCMC.computeControls:  t = 0.798
+rdCMC.computeControls:  t = 0.799
+rdCMC.computeControls:  t = 0.8
+rdCMC.computeControls:  t = 0.801
+rdCMC.computeControls:  t = 0.802
+rdCMC.computeControls:  t = 0.803
+rdCMC.computeControls:  t = 0.804
+rdCMC.computeControls:  t = 0.805
+rdCMC.computeControls:  t = 0.806
+rdCMC.computeControls:  t = 0.807
+rdCMC.computeControls:  t = 0.808
+rdCMC.computeControls:  t = 0.809
+rdCMC.computeControls:  t = 0.81
+rdCMC.computeControls:  t = 0.811
+rdCMC.computeControls:  t = 0.812
+rdCMC.computeControls:  t = 0.813
+rdCMC.computeControls:  t = 0.814
+rdCMC.computeControls:  t = 0.815
+rdCMC.computeControls:  t = 0.816
+rdCMC.computeControls:  t = 0.817
+rdCMC.computeControls:  t = 0.818
+rdCMC.computeControls:  t = 0.819
+rdCMC.computeControls:  t = 0.82
+rdCMC.computeControls:  t = 0.821
+rdCMC.computeControls:  t = 0.822
+rdCMC.computeControls:  t = 0.823
+rdCMC.computeControls:  t = 0.824
+rdCMC.computeControls:  t = 0.825
+rdCMC.computeControls:  t = 0.826
+rdCMC.computeControls:  t = 0.827
+rdCMC.computeControls:  t = 0.828
+rdCMC.computeControls:  t = 0.829
+rdCMC.computeControls:  t = 0.83
+rdCMC.computeControls:  t = 0.831
+rdCMC.computeControls:  t = 0.832
+rdCMC.computeControls:  t = 0.833
+rdCMC.computeControls:  t = 0.834
+rdCMC.computeControls:  t = 0.835
+rdCMC.computeControls:  t = 0.836
+rdCMC.computeControls:  t = 0.837
+rdCMC.computeControls:  t = 0.838
+rdCMC.computeControls:  t = 0.839
+rdCMC.computeControls:  t = 0.84
+rdCMC.computeControls:  t = 0.841
+rdCMC.computeControls:  t = 0.842
+rdCMC.computeControls:  t = 0.843
+rdCMC.computeControls:  t = 0.844
+rdCMC.computeControls:  t = 0.845
+rdCMC.computeControls:  t = 0.846
+rdCMC.computeControls:  t = 0.847
+rdCMC.computeControls:  t = 0.848
+rdCMC.computeControls:  t = 0.849
+rdCMC.computeControls:  t = 0.85
+rdCMC.computeControls:  t = 0.851
+rdCMC.computeControls:  t = 0.852
+rdCMC.computeControls:  t = 0.853
+rdCMC.computeControls:  t = 0.854
+rdCMC.computeControls:  t = 0.855
+rdCMC.computeControls:  t = 0.856
+rdCMC.computeControls:  t = 0.857
+rdCMC.computeControls:  t = 0.858
+rdCMC.computeControls:  t = 0.859
+rdCMC.computeControls:  t = 0.86
+rdCMC.computeControls:  t = 0.861
+rdCMC.computeControls:  t = 0.862
+rdCMC.computeControls:  t = 0.863
+rdCMC.computeControls:  t = 0.864
+rdCMC.computeControls:  t = 0.865
+rdCMC.computeControls:  t = 0.866
+rdCMC.computeControls:  t = 0.867
+rdCMC.computeControls:  t = 0.868
+rdCMC.computeControls:  t = 0.869
+rdCMC.computeControls:  t = 0.87
+rdCMC.computeControls:  t = 0.871
+rdCMC.computeControls:  t = 0.872
+rdCMC.computeControls:  t = 0.873
+rdCMC.computeControls:  t = 0.874
+rdCMC.computeControls:  t = 0.875
+rdCMC.computeControls:  t = 0.876
+rdCMC.computeControls:  t = 0.877
+rdCMC.computeControls:  t = 0.878
+rdCMC.computeControls:  t = 0.879
+rdCMC.computeControls:  t = 0.88
+rdCMC.computeControls:  t = 0.881
+rdCMC.computeControls:  t = 0.882
+rdCMC.computeControls:  t = 0.883
+rdCMC.computeControls:  t = 0.884
+rdCMC.computeControls:  t = 0.885
+rdCMC.computeControls:  t = 0.886
+rdCMC.computeControls:  t = 0.887
+rdCMC.computeControls:  t = 0.888
+rdCMC.computeControls:  t = 0.889
+rdCMC.computeControls:  t = 0.89
+rdCMC.computeControls:  t = 0.891
+rdCMC.computeControls:  t = 0.892
+rdCMC.computeControls:  t = 0.893
+rdCMC.computeControls:  t = 0.894
+rdCMC.computeControls:  t = 0.895
+rdCMC.computeControls:  t = 0.896
+rdCMC.computeControls:  t = 0.897
+rdCMC.computeControls:  t = 0.898
+rdCMC.computeControls:  t = 0.899
+rdCMC.computeControls:  t = 0.9
+rdCMC.computeControls:  t = 0.901
+rdCMC.computeControls:  t = 0.902
+rdCMC.computeControls:  t = 0.903
+rdCMC.computeControls:  t = 0.904
+rdCMC.computeControls:  t = 0.905
+rdCMC.computeControls:  t = 0.906
+rdCMC.computeControls:  t = 0.907
+rdCMC.computeControls:  t = 0.908
+rdCMC.computeControls:  t = 0.909
+rdCMC.computeControls:  t = 0.91
+rdCMC.computeControls:  t = 0.911
+rdCMC.computeControls:  t = 0.912
+rdCMC.computeControls:  t = 0.913
+rdCMC.computeControls:  t = 0.914
+rdCMC.computeControls:  t = 0.915
+rdCMC.computeControls:  t = 0.916
+rdCMC.computeControls:  t = 0.917
+rdCMC.computeControls:  t = 0.918
+rdCMC.computeControls:  t = 0.919
+rdCMC.computeControls:  t = 0.92
+rdCMC.computeControls:  t = 0.921
+rdCMC.computeControls:  t = 0.922
+rdCMC.computeControls:  t = 0.923
+rdCMC.computeControls:  t = 0.924
+rdCMC.computeControls:  t = 0.925
+rdCMC.computeControls:  t = 0.926
+rdCMC.computeControls:  t = 0.927
+rdCMC.computeControls:  t = 0.928
+rdCMC.computeControls:  t = 0.929
+rdCMC.computeControls:  t = 0.93
+rdCMC.computeControls:  t = 0.931
+rdCMC.computeControls:  t = 0.932
+rdCMC.computeControls:  t = 0.933
+rdCMC.computeControls:  t = 0.934
+rdCMC.computeControls:  t = 0.935
+rdCMC.computeControls:  t = 0.936
+rdCMC.computeControls:  t = 0.937
+rdCMC.computeControls:  t = 0.938
+rdCMC.computeControls:  t = 0.939
+rdCMC.computeControls:  t = 0.94
+rdCMC.computeControls:  t = 0.941
+rdCMC.computeControls:  t = 0.942
+rdCMC.computeControls:  t = 0.943
+rdCMC.computeControls:  t = 0.944
+rdCMC.computeControls:  t = 0.945
+rdCMC.computeControls:  t = 0.946
+rdCMC.computeControls:  t = 0.947
+rdCMC.computeControls:  t = 0.948
+rdCMC.computeControls:  t = 0.949
+rdCMC.computeControls:  t = 0.95
+rdCMC.computeControls:  t = 0.951
+rdCMC.computeControls:  t = 0.952
+rdCMC.computeControls:  t = 0.953
+rdCMC.computeControls:  t = 0.954
+rdCMC.computeControls:  t = 0.955
+rdCMC.computeControls:  t = 0.956
+rdCMC.computeControls:  t = 0.957
+rdCMC.computeControls:  t = 0.958
+rdCMC.computeControls:  t = 0.959
+rdCMC.computeControls:  t = 0.96
+rdCMC.computeControls:  t = 0.961
+rdCMC.computeControls:  t = 0.962
+rdCMC.computeControls:  t = 0.963
+rdCMC.computeControls:  t = 0.964
+rdCMC.computeControls:  t = 0.965
+rdCMC.computeControls:  t = 0.966
+rdCMC.computeControls:  t = 0.967
+rdCMC.computeControls:  t = 0.968
+rdCMC.computeControls:  t = 0.969
+rdCMC.computeControls:  t = 0.97
+rdCMC.computeControls:  t = 0.971
+rdCMC.computeControls:  t = 0.972
+rdCMC.computeControls:  t = 0.973
+rdCMC.computeControls:  t = 0.974
+rdCMC.computeControls:  t = 0.975
+rdCMC.computeControls:  t = 0.976
+rdCMC.computeControls:  t = 0.977
+rdCMC.computeControls:  t = 0.978
+rdCMC.computeControls:  t = 0.979
+rdCMC.computeControls:  t = 0.98
+rdCMC.computeControls:  t = 0.981
+rdCMC.computeControls:  t = 0.982
+rdCMC.computeControls:  t = 0.983
+rdCMC.computeControls:  t = 0.984
+rdCMC.computeControls:  t = 0.985
+rdCMC.computeControls:  t = 0.986
+rdCMC.computeControls:  t = 0.987
+rdCMC.computeControls:  t = 0.988
+rdCMC.computeControls:  t = 0.989
+rdCMC.computeControls:  t = 0.99
+rdCMC.computeControls:  t = 0.991
+rdCMC.computeControls:  t = 0.992
+rdCMC.computeControls:  t = 0.993
+rdCMC.computeControls:  t = 0.994
+rdCMC.computeControls:  t = 0.995
+rdCMC.computeControls:  t = 0.996
+rdCMC.computeControls:  t = 0.997
+rdCMC.computeControls:  t = 0.998
+rdCMC.computeControls:  t = 0.999
+rdCMC.computeControls:  t = 1
+rdCMC.computeControls:  t = 1.001
+rdCMC.computeControls:  t = 1.002
+rdCMC.computeControls:  t = 1.003
+rdCMC.computeControls:  t = 1.004
+rdCMC.computeControls:  t = 1.005
+rdCMC.computeControls:  t = 1.006
+rdCMC.computeControls:  t = 1.007
+rdCMC.computeControls:  t = 1.008
+rdCMC.computeControls:  t = 1.009
+rdCMC.computeControls:  t = 1.01
+rdCMC.computeControls:  t = 1.011
+rdCMC.computeControls:  t = 1.012
+rdCMC.computeControls:  t = 1.013
+rdCMC.computeControls:  t = 1.014
+rdCMC.computeControls:  t = 1.015
+rdCMC.computeControls:  t = 1.016
+rdCMC.computeControls:  t = 1.017
+rdCMC.computeControls:  t = 1.018
+rdCMC.computeControls:  t = 1.019
+rdCMC.computeControls:  t = 1.02
+rdCMC.computeControls:  t = 1.021
+rdCMC.computeControls:  t = 1.022
+rdCMC.computeControls:  t = 1.023
+rdCMC.computeControls:  t = 1.024
+rdCMC.computeControls:  t = 1.025
+rdCMC.computeControls:  t = 1.026
+rdCMC.computeControls:  t = 1.027
+rdCMC.computeControls:  t = 1.028
+rdCMC.computeControls:  t = 1.029
+rdCMC.computeControls:  t = 1.03
+rdCMC.computeControls:  t = 1.031
+rdCMC.computeControls:  t = 1.032
+rdCMC.computeControls:  t = 1.033
+rdCMC.computeControls:  t = 1.034
+rdCMC.computeControls:  t = 1.035
+rdCMC.computeControls:  t = 1.036
+rdCMC.computeControls:  t = 1.037
+rdCMC.computeControls:  t = 1.038
+rdCMC.computeControls:  t = 1.039
+rdCMC.computeControls:  t = 1.04
+rdCMC.computeControls:  t = 1.041
+rdCMC.computeControls:  t = 1.042
+rdCMC.computeControls:  t = 1.043
+rdCMC.computeControls:  t = 1.044
+rdCMC.computeControls:  t = 1.045
+rdCMC.computeControls:  t = 1.046
+rdCMC.computeControls:  t = 1.047
+rdCMC.computeControls:  t = 1.048
+rdCMC.computeControls:  t = 1.049
+rdCMC.computeControls:  t = 1.05
+rdCMC.computeControls:  t = 1.051
+rdCMC.computeControls:  t = 1.052
+rdCMC.computeControls:  t = 1.053
+rdCMC.computeControls:  t = 1.054
+rdCMC.computeControls:  t = 1.055
+rdCMC.computeControls:  t = 1.056
+rdCMC.computeControls:  t = 1.057
+rdCMC.computeControls:  t = 1.058
+rdCMC.computeControls:  t = 1.059
+rdCMC.computeControls:  t = 1.06
+rdCMC.computeControls:  t = 1.061
+rdCMC.computeControls:  t = 1.062
+rdCMC.computeControls:  t = 1.063
+rdCMC.computeControls:  t = 1.064
+rdCMC.computeControls:  t = 1.065
+rdCMC.computeControls:  t = 1.066
+rdCMC.computeControls:  t = 1.067
+rdCMC.computeControls:  t = 1.068
+rdCMC.computeControls:  t = 1.069
+rdCMC.computeControls:  t = 1.07
+rdCMC.computeControls:  t = 1.071
+rdCMC.computeControls:  t = 1.072
+rdCMC.computeControls:  t = 1.073
+rdCMC.computeControls:  t = 1.074
+rdCMC.computeControls:  t = 1.075
+rdCMC.computeControls:  t = 1.076
+rdCMC.computeControls:  t = 1.077
+rdCMC.computeControls:  t = 1.078
+rdCMC.computeControls:  t = 1.079
+rdCMC.computeControls:  t = 1.08
+rdCMC.computeControls:  t = 1.081
+rdCMC.computeControls:  t = 1.082
+rdCMC.computeControls:  t = 1.083
+rdCMC.computeControls:  t = 1.084
+rdCMC.computeControls:  t = 1.085
+rdCMC.computeControls:  t = 1.086
+rdCMC.computeControls:  t = 1.087
+rdCMC.computeControls:  t = 1.088
+rdCMC.computeControls:  t = 1.089
+rdCMC.computeControls:  t = 1.09
+rdCMC.computeControls:  t = 1.091
+rdCMC.computeControls:  t = 1.092
+rdCMC.computeControls:  t = 1.093
+rdCMC.computeControls:  t = 1.094
+rdCMC.computeControls:  t = 1.095
+rdCMC.computeControls:  t = 1.096
+rdCMC.computeControls:  t = 1.097
+rdCMC.computeControls:  t = 1.098
+rdCMC.computeControls:  t = 1.099
+rdCMC.computeControls:  t = 1.1
+rdCMC.computeControls:  t = 1.101
+rdCMC.computeControls:  t = 1.102
+rdCMC.computeControls:  t = 1.103
+rdCMC.computeControls:  t = 1.104
+rdCMC.computeControls:  t = 1.105
+rdCMC.computeControls:  t = 1.106
+rdCMC.computeControls:  t = 1.107
+rdCMC.computeControls:  t = 1.108
+rdCMC.computeControls:  t = 1.109
+rdCMC.computeControls:  t = 1.11
+rdCMC.computeControls:  t = 1.111
+rdCMC.computeControls:  t = 1.112
+rdCMC.computeControls:  t = 1.113
+rdCMC.computeControls:  t = 1.114
+rdCMC.computeControls:  t = 1.115
+rdCMC.computeControls:  t = 1.116
+rdCMC.computeControls:  t = 1.117
+rdCMC.computeControls:  t = 1.118
+rdCMC.computeControls:  t = 1.119
+rdCMC.computeControls:  t = 1.12
+rdCMC.computeControls:  t = 1.121
+rdCMC.computeControls:  t = 1.122
+rdCMC.computeControls:  t = 1.123
+rdCMC.computeControls:  t = 1.124
+rdCMC.computeControls:  t = 1.125
+rdCMC.computeControls:  t = 1.126
+rdCMC.computeControls:  t = 1.127
+rdCMC.computeControls:  t = 1.128
+rdCMC.computeControls:  t = 1.129
+rdCMC.computeControls:  t = 1.13
+rdCMC.computeControls:  t = 1.131
+rdCMC.computeControls:  t = 1.132
+rdCMC.computeControls:  t = 1.133
+rdCMC.computeControls:  t = 1.134
+rdCMC.computeControls:  t = 1.135
+rdCMC.computeControls:  t = 1.136
+rdCMC.computeControls:  t = 1.137
+rdCMC.computeControls:  t = 1.138
+rdCMC.computeControls:  t = 1.139
+rdCMC.computeControls:  t = 1.14
+rdCMC.computeControls:  t = 1.141
+rdCMC.computeControls:  t = 1.142
+rdCMC.computeControls:  t = 1.143
+rdCMC.computeControls:  t = 1.144
+rdCMC.computeControls:  t = 1.145
+rdCMC.computeControls:  t = 1.146
+rdCMC.computeControls:  t = 1.147
+rdCMC.computeControls:  t = 1.148
+rdCMC.computeControls:  t = 1.149
+rdCMC.computeControls:  t = 1.15
+rdCMC.computeControls:  t = 1.151
+rdCMC.computeControls:  t = 1.152
+rdCMC.computeControls:  t = 1.153
+rdCMC.computeControls:  t = 1.154
+rdCMC.computeControls:  t = 1.155
+rdCMC.computeControls:  t = 1.156
+rdCMC.computeControls:  t = 1.157
+rdCMC.computeControls:  t = 1.158
+rdCMC.computeControls:  t = 1.159
+rdCMC.computeControls:  t = 1.16
+rdCMC.computeControls:  t = 1.161
+rdCMC.computeControls:  t = 1.162
+rdCMC.computeControls:  t = 1.163
+rdCMC.computeControls:  t = 1.164
+rdCMC.computeControls:  t = 1.165
+rdCMC.computeControls:  t = 1.166
+rdCMC.computeControls:  t = 1.167
+rdCMC.computeControls:  t = 1.168
+rdCMC.computeControls:  t = 1.169
+rdCMC.computeControls:  t = 1.17
+rdCMC.computeControls:  t = 1.171
+rdCMC.computeControls:  t = 1.172
+rdCMC.computeControls:  t = 1.173
+rdCMC.computeControls:  t = 1.174
+rdCMC.computeControls:  t = 1.175
+rdCMC.computeControls:  t = 1.176
+rdCMC.computeControls:  t = 1.177
+rdCMC.computeControls:  t = 1.178
+rdCMC.computeControls:  t = 1.179
+rdCMC.computeControls:  t = 1.18
+rdCMC.computeControls:  t = 1.181
+rdCMC.computeControls:  t = 1.182
+rdCMC.computeControls:  t = 1.183
+rdCMC.computeControls:  t = 1.184
+rdCMC.computeControls:  t = 1.185
+rdCMC.computeControls:  t = 1.186
+rdCMC.computeControls:  t = 1.187
+rdCMC.computeControls:  t = 1.188
+rdCMC.computeControls:  t = 1.189
+rdCMC.computeControls:  t = 1.19
+rdCMC.computeControls:  t = 1.191
+rdCMC.computeControls:  t = 1.192
+rdCMC.computeControls:  t = 1.193
+rdCMC.computeControls:  t = 1.194
+rdCMC.computeControls:  t = 1.195
+rdCMC.computeControls:  t = 1.196
+rdCMC.computeControls:  t = 1.197
+rdCMC.computeControls:  t = 1.198
+rdCMC.computeControls:  t = 1.199
+rdCMC.computeControls:  t = 1.2
+rdCMC.computeControls:  t = 1.201
+rdCMC.computeControls:  t = 1.202
+rdCMC.computeControls:  t = 1.203
+rdCMC.computeControls:  t = 1.204
+rdCMC.computeControls:  t = 1.205
+rdCMC.computeControls:  t = 1.206
+rdCMC.computeControls:  t = 1.207
+rdCMC.computeControls:  t = 1.208
+rdCMC.computeControls:  t = 1.209
+rdCMC.computeControls:  t = 1.21
+rdCMC.computeControls:  t = 1.211
+rdCMC.computeControls:  t = 1.212
+rdCMC.computeControls:  t = 1.213
+rdCMC.computeControls:  t = 1.214
+rdCMC.computeControls:  t = 1.215
+rdCMC.computeControls:  t = 1.216
+rdCMC.computeControls:  t = 1.217
+rdCMC.computeControls:  t = 1.218
+rdCMC.computeControls:  t = 1.219
+rdCMC.computeControls:  t = 1.22
+rdCMC.computeControls:  t = 1.221
+rdCMC.computeControls:  t = 1.222
+rdCMC.computeControls:  t = 1.223
+rdCMC.computeControls:  t = 1.224
+rdCMC.computeControls:  t = 1.225
+rdCMC.computeControls:  t = 1.226
+rdCMC.computeControls:  t = 1.227
+rdCMC.computeControls:  t = 1.228
+rdCMC.computeControls:  t = 1.229
+rdCMC.computeControls:  t = 1.23
+rdCMC.computeControls:  t = 1.231
+rdCMC.computeControls:  t = 1.232
+rdCMC.computeControls:  t = 1.233
+rdCMC.computeControls:  t = 1.234
+rdCMC.computeControls:  t = 1.235
+rdCMC.computeControls:  t = 1.236
+rdCMC.computeControls:  t = 1.237
+rdCMC.computeControls:  t = 1.238
+rdCMC.computeControls:  t = 1.239
+rdCMC.computeControls:  t = 1.24
+rdCMC.computeControls:  t = 1.241
+rdCMC.computeControls:  t = 1.242
+rdCMC.computeControls:  t = 1.243
+rdCMC.computeControls:  t = 1.244
+rdCMC.computeControls:  t = 1.245
+rdCMC.computeControls:  t = 1.246
+rdCMC.computeControls:  t = 1.247
+rdCMC.computeControls:  t = 1.248
+rdCMC.computeControls:  t = 1.249
+rdCMC.computeControls:  t = 1.25
+rdCMC.computeControls:  t = 1.251
+rdCMC.computeControls:  t = 1.252
+rdCMC.computeControls:  t = 1.253
+rdCMC.computeControls:  t = 1.254
+rdCMC.computeControls:  t = 1.255
+rdCMC.computeControls:  t = 1.256
+rdCMC.computeControls:  t = 1.257
+rdCMC.computeControls:  t = 1.258
+rdCMC.computeControls:  t = 1.259
+rdCMC.computeControls:  t = 1.26
+rdCMC.computeControls:  t = 1.261
+rdCMC.computeControls:  t = 1.262
+rdCMC.computeControls:  t = 1.263
+rdCMC.computeControls:  t = 1.264
+rdCMC.computeControls:  t = 1.265
+rdCMC.computeControls:  t = 1.266
+rdCMC.computeControls:  t = 1.267
+rdCMC.computeControls:  t = 1.268
+rdCMC.computeControls:  t = 1.269
+rdCMC.computeControls:  t = 1.27
+rdCMC.computeControls:  t = 1.271
+rdCMC.computeControls:  t = 1.272
+rdCMC.computeControls:  t = 1.273
+rdCMC.computeControls:  t = 1.274
+rdCMC.computeControls:  t = 1.275
+rdCMC.computeControls:  t = 1.276
+rdCMC.computeControls:  t = 1.277
+rdCMC.computeControls:  t = 1.278
+rdCMC.computeControls:  t = 1.279
+rdCMC.computeControls:  t = 1.28
+rdCMC.computeControls:  t = 1.281
+rdCMC.computeControls:  t = 1.282
+rdCMC.computeControls:  t = 1.283
+rdCMC.computeControls:  t = 1.284
+rdCMC.computeControls:  t = 1.285
+rdCMC.computeControls:  t = 1.286
+rdCMC.computeControls:  t = 1.287
+rdCMC.computeControls:  t = 1.288
+rdCMC.computeControls:  t = 1.289
+rdCMC.computeControls:  t = 1.29
+rdCMC.computeControls:  t = 1.291
+rdCMC.computeControls:  t = 1.292
+rdCMC.computeControls:  t = 1.293
+rdCMC.computeControls:  t = 1.294
+rdCMC.computeControls:  t = 1.295
+rdCMC.computeControls:  t = 1.296
+rdCMC.computeControls:  t = 1.297
+rdCMC.computeControls:  t = 1.298
+rdCMC.computeControls:  t = 1.299
+rdCMC.computeControls:  t = 1.3
+rdCMC.computeControls:  t = 1.301
+rdCMC.computeControls:  t = 1.302
+rdCMC.computeControls:  t = 1.303
+rdCMC.computeControls:  t = 1.304
+rdCMC.computeControls:  t = 1.305
+rdCMC.computeControls:  t = 1.306
+rdCMC.computeControls:  t = 1.307
+rdCMC.computeControls:  t = 1.308
+rdCMC.computeControls:  t = 1.309
+rdCMC.computeControls:  t = 1.31
+rdCMC.computeControls:  t = 1.311
+rdCMC.computeControls:  t = 1.312
+rdCMC.computeControls:  t = 1.313
+rdCMC.computeControls:  t = 1.314
+rdCMC.computeControls:  t = 1.315
+rdCMC.computeControls:  t = 1.316
+rdCMC.computeControls:  t = 1.317
+rdCMC.computeControls:  t = 1.318
+rdCMC.computeControls:  t = 1.319
+rdCMC.computeControls:  t = 1.32
+rdCMC.computeControls:  t = 1.321
+rdCMC.computeControls:  t = 1.322
+rdCMC.computeControls:  t = 1.323
+rdCMC.computeControls:  t = 1.324
+rdCMC.computeControls:  t = 1.325
+rdCMC.computeControls:  t = 1.326
+rdCMC.computeControls:  t = 1.327
+rdCMC.computeControls:  t = 1.328
+rdCMC.computeControls:  t = 1.329
+rdCMC.computeControls:  t = 1.33
+rdCMC.computeControls:  t = 1.331
+rdCMC.computeControls:  t = 1.332
+rdCMC.computeControls:  t = 1.333
+rdCMC.computeControls:  t = 1.334
+rdCMC.computeControls:  t = 1.335
+rdCMC.computeControls:  t = 1.336
+rdCMC.computeControls:  t = 1.337
+rdCMC.computeControls:  t = 1.338
+rdCMC.computeControls:  t = 1.339
+rdCMC.computeControls:  t = 1.34
+rdCMC.computeControls:  t = 1.341
+rdCMC.computeControls:  t = 1.342
+rdCMC.computeControls:  t = 1.343
+rdCMC.computeControls:  t = 1.344
+rdCMC.computeControls:  t = 1.345
+rdCMC.computeControls:  t = 1.346
+rdCMC.computeControls:  t = 1.347
+rdCMC.computeControls:  t = 1.348
+rdCMC.computeControls:  t = 1.349
+rdCMC.computeControls:  t = 1.35
+rdCMC.computeControls:  t = 1.351
+rdCMC.computeControls:  t = 1.352
+rdCMC.computeControls:  t = 1.353
+rdCMC.computeControls:  t = 1.354
+rdCMC.computeControls:  t = 1.355
+rdCMC.computeControls:  t = 1.356
+rdCMC.computeControls:  t = 1.357
+rdCMC.computeControls:  t = 1.358
+rdCMC.computeControls:  t = 1.359
+rdCMC.computeControls:  t = 1.36
+rdCMC.computeControls:  t = 1.361
+rdCMC.computeControls:  t = 1.362
+rdCMC.computeControls:  t = 1.363
+rdCMC.computeControls:  t = 1.364
+rdCMC.computeControls:  t = 1.365
+rdCMC.computeControls:  t = 1.366
+rdCMC.computeControls:  t = 1.367
+rdCMC.computeControls:  t = 1.368
+rdCMC.computeControls:  t = 1.369
+rdCMC.computeControls:  t = 1.37
+rdCMC.computeControls:  t = 1.371
+rdCMC.computeControls:  t = 1.372
+rdCMC.computeControls:  t = 1.373
+rdCMC.computeControls:  t = 1.374
+rdCMC.computeControls:  t = 1.375
+rdCMC.computeControls:  t = 1.376
+rdCMC.computeControls:  t = 1.377
+rdCMC.computeControls:  t = 1.378
+rdCMC.computeControls:  t = 1.379
+rdCMC.computeControls:  t = 1.38
+rdCMC.computeControls:  t = 1.381
+rdCMC.computeControls:  t = 1.382
+rdCMC.computeControls:  t = 1.383
+rdCMC.computeControls:  t = 1.384
+rdCMC.computeControls:  t = 1.385
+rdCMC.computeControls:  t = 1.386
+rdCMC.computeControls:  t = 1.387
+rdCMC.computeControls:  t = 1.388
+rdCMC.computeControls:  t = 1.389
+rdCMC.computeControls:  t = 1.39
+rdCMC.computeControls:  t = 1.391
+rdCMC.computeControls:  t = 1.392
+rdCMC.computeControls:  t = 1.393
+rdCMC.computeControls:  t = 1.394
+rdCMC.computeControls:  t = 1.395
+rdCMC.computeControls:  t = 1.396
+rdCMC.computeControls:  t = 1.397
+rdCMC.computeControls:  t = 1.398
+rdCMC.computeControls:  t = 1.399
+rdCMC.computeControls:  t = 1.4
+rdCMC.computeControls:  t = 1.401
+rdCMC.computeControls:  t = 1.402
+----------------------------------------------------------------
+Finished tracking the specified kinematics
+=================================================================
+Start time   = Tue Dec 20 18:43:02 2011
+Finish time  = Tue Dec 20 18:45:03 2011
+Elapsed time = 121 seconds.
+================================================================
+
+
+Printing results of investigation subject03_Run_40002_cycle2 to RRA_Results_v191_Run_40002_cycle2.
+
+
+Average residuals:
+FX=0.143807 FY=-2.44934 FZ=-0.299426
+MX=-5.36661 MY=-0.859615 MZ=-1.59355
+
+

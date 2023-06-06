@@ -1,0 +1,12 @@
+[2023-02-13 11:27:15.053] [info] Updating Model file from 30000 to latest format...
+[2023-02-13 11:27:15.055] [warning] Model name '3D Gait Model with Simple Arms' contains whitespace.
+[2023-02-13 11:27:15.055] [warning] It was renamed to '3DGaitModelwithSimpleArms'.
+[2023-02-13 11:27:15.149] [info] Loaded model 3DGaitModelwithSimpleArms from file C:\Users\Nick\Desktop\HamnerRunningData\subject01\FullBodyModel_SimpleArms_Hamner2010_HPLMarkers_subject01_v191_33.osim
+[2023-02-13 11:27:16.377] [warning] Visualizer couldn't open hat_ribs_scap.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'C:\OpenSim 3.3\Geometry\hat_ribs_scap.vtp' failed with message:
+  SimTK Exception thrown at PolygonalMesh.cpp:340:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Only format="ascii" is supported for .vtp file DataArray elements, got format="appended" for Points DataArray.
+  (Required condition 'pointData.getRequiredAttributeValue("format") == "ascii"' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
