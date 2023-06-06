@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="40000">
+	<AnalyzeTool name="analysis_squatsAsym1">
+		<!--Name of the .osim file used to construct a model.-->
+		<model_file>../../../../../../Raw/subject4/OpenSimData/Mocap/Model/LaiArnoldModified2017_poly_withArms_weldHand_scaled.osim</model_file>
+		<!--Replace the model's force set with sets specified in <force_set_files>? If false, the force set is appended to.-->
+		<replace_force_set>false</replace_force_set>
+		<!--List of xml files used to construct a force set for the model.-->
+		<force_set_files> </force_set_files>
+		<!--Directory used for writing results.-->
+		<results_directory>results_squatsAsym1</results_directory>
+		<!--Output precision.  It is 8 by default.-->
+		<output_precision>8</output_precision>
+		<!--Initial time for the simulation.-->
+		<initial_time>0.0000</initial_time>
+		<!--Final time for the simulation.-->
+		<final_time>13.3700</final_time>
+		<!--Flag indicating whether or not to compute equilibrium values for states other than the coordinates or speeds.  For example, equilibrium muscle fiber lengths or muscle forces.-->
+		<solve_for_equilibrium_for_auxiliary_states>false</solve_for_equilibrium_for_auxiliary_states>
+		<!--Maximum number of integrator steps.-->
+		<maximum_number_of_integrator_steps>20000</maximum_number_of_integrator_steps>
+		<!--Maximum integration step size.-->
+		<maximum_integrator_step_size>1</maximum_integrator_step_size>
+		<!--Minimum integration step size.-->
+		<minimum_integrator_step_size>1e-08</minimum_integrator_step_size>
+		<!--Integrator error tolerance. When the error is greater, the integrator step size is decreased.-->
+		<integrator_error_tolerance>1.0000000000000001e-05</integrator_error_tolerance>
+		<!--Set of analyses to be run during the investigation.-->
+		<AnalysisSet name="Analyses">
+			<objects>
+				<BodyKinematics name="BodyKinematics">
+					<!--Flag (true or false) specifying whether on. True by default.-->
+					<on>true</on>
+					<!--Start time.-->
+					<start_time>0.0000</start_time>
+					<!--End time.-->
+					<end_time>13.3700</end_time>
+					<!--Specifies how often to store results during a simulation. More specifically, the interval (a positive integer) specifies how many successful integration steps should be taken before results are recorded again.-->
+					<step_interval>1</step_interval>
+					<!--Flag (true or false) indicating whether the results are in degrees or not.-->
+					<in_degrees>false</in_degrees>
+					<!--Names of bodies to record kinematics for.  Use 'all' to record all bodies.  The special name 'center_of_mass' refers to the combined center of mass.-->
+					<bodies>center_of_mass</bodies>
+					<!--Flag (true or false) indicating whether to express results in the global frame or local-frames of the bodies. Body positions and center of mass results are always given in the global frame. This flag is set to false by default.-->
+					<express_results_in_body_local_frame>false</express_results_in_body_local_frame>
+				</BodyKinematics>
+			</objects>
+			<groups />
+		</AnalysisSet>
+		<!--Controller objects in the model.-->
+		<ControllerSet name="Controllers">
+			<!--List of components that this component owns and serializes.-->
+			<components />
+			<objects />
+			<groups />
+		</ControllerSet>
+		<!--XML file (.xml) containing the forces applied to the model as ExternalLoads.-->
+		<external_loads_file>squatsAsym1_external_loads.xml</external_loads_file>
+		<!--The name of the file containing coordinate data. Can be a motion (.mot) or a states (.sto) file.-->
+		<coordinates_file>../../../../../../Raw/subject4/OpenSimData/Mocap/IK/squatsAsym1.mot</coordinates_file>
+	</AnalyzeTool>
+</OpenSimDocument>

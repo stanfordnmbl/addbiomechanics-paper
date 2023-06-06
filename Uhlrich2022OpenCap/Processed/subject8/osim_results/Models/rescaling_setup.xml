@@ -1,0 +1,132 @@
+<OpenSimDocument Version="40000">
+    <ScaleTool name="optimized_scale_and_markers">
+        <mass>59.4000000000</mass>
+        <height>1.6400000000</height>
+        <age>-1</age>
+        <notes>Unassigned</notes>
+        <GenericModelMaker>
+            <model_file>Models/unscaled_but_with_optimized_markers.osim</model_file>
+            <marker_set_file>Unassigned</marker_set_file>
+        </GenericModelMaker>
+        <MarkerPlacer>
+            <apply>false</apply>
+        </MarkerPlacer>
+        <ModelScaler>
+            <apply>true</apply>
+            <scaling_order> manualScale</scaling_order>
+            <MeasurementSet>
+                <objects/>
+                <groups/>
+            </MeasurementSet>
+            <ScaleSet>
+                <objects>
+                    <Scale>
+                        <scales> 1.0184082145 0.9868580098 1.0524900819</scales>
+                        <segment>pelvis</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9719405412 0.9469004908 0.9783927415</scales>
+                        <segment>femur_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 1.0371687725 1.0340253701 1.0298075459</scales>
+                        <segment>tibia_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9593932607 0.9780012306 0.9699544833</scales>
+                        <segment>talus_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 1.0237951694 1.0250085786 1.0179184870</scales>
+                        <segment>calcn_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9865264845 0.9862837561 0.9864192162</scales>
+                        <segment>toes_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9719405412 0.9469004908 0.9783927415</scales>
+                        <segment>femur_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 1.0371687725 1.0340253701 1.0298075459</scales>
+                        <segment>tibia_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9593932607 0.9780012306 0.9699544833</scales>
+                        <segment>talus_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 1.0237951694 1.0250085786 1.0179184870</scales>
+                        <segment>calcn_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9865264845 0.9862837561 0.9864192162</scales>
+                        <segment>toes_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 1.1256170313 0.9275834146 1.0030564710</scales>
+                        <segment>torso</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9995985022 1.0112444134 0.9861656354</scales>
+                        <segment>humerus_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9465249589 0.9397294454 0.9447556012</scales>
+                        <segment>ulna_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9465249589 0.9397294454 0.9447556012</scales>
+                        <segment>radius_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9869031946 0.9869031946 0.9869031946</scales>
+                        <segment>hand_r</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9995985022 1.0112444134 0.9861656354</scales>
+                        <segment>humerus_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9465249589 0.9397294454 0.9447556012</scales>
+                        <segment>ulna_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9465249589 0.9397294454 0.9447556012</scales>
+                        <segment>radius_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                    <Scale>
+                        <scales> 0.9869031946 0.9869031946 0.9869031946</scales>
+                        <segment>hand_l</segment>
+                        <apply>true</apply>
+                    </Scale>
+                </objects>
+            </ScaleSet>
+            <marker_file>Unassigned</marker_file>
+            <time_range> -1 1</time_range>
+            <preserve_mass_distribution>false</preserve_mass_distribution>
+            <output_model_file>Models/optimized_scale_and_markers.osim</output_model_file>
+            <output_scale_file>Unassigned</output_scale_file>
+        </ModelScaler>
+    </ScaleTool>
+</OpenSimDocument>

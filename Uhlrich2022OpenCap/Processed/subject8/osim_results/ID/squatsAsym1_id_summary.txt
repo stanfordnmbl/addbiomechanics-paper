@@ -1,0 +1,12 @@
+-------------------------------------------
+Trial squatsAsym1: Inverse Dynamics Summary
+-------------------------------------------
+
+Automatic processing reduced the residual loads needed for dynamic
+consistency to the following magnitudes, averaged over all frames of
+this trial:
+
+  - Avg. Residual Force   = 7.02 N
+  - Avg. Residual Torque  = 5.81 N-m
+
+

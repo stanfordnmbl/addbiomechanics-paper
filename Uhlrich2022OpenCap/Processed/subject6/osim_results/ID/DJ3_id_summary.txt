@@ -1,0 +1,12 @@
+-----------------------------------
+Trial DJ3: Inverse Dynamics Summary
+-----------------------------------
+
+Automatic processing reduced the residual loads needed for dynamic
+consistency to the following magnitudes, averaged over all frames of
+this trial:
+
+  - Avg. Residual Force   = 137.16 N
+  - Avg. Residual Torque  = 53.58 N-m
+
+

@@ -1,0 +1,7 @@
+{
+  "excluded_trials": [
+    "STS",
+    "static",
+    "DJAsym"
+  ]
+}

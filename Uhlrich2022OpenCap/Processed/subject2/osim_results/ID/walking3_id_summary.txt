@@ -1,0 +1,12 @@
+----------------------------------------
+Trial walking3: Inverse Dynamics Summary
+----------------------------------------
+
+Automatic processing reduced the residual loads needed for dynamic
+consistency to the following magnitudes, averaged over all frames of
+this trial:
+
+  - Avg. Residual Force   = 2.87 N
+  - Avg. Residual Torque  = 6.05 N-m
+
+

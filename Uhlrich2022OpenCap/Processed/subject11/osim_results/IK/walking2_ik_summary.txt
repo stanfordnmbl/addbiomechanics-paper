@@ -1,0 +1,22 @@
+----------------------------------------------
+Trial walking2: Inverse Kinematics Summary
+----------------------------------------------
+
+Automatic processing achieved the following marker errors, averaged
+over all frames of this trial:
+
+  - Avg. Marker RMSE      = 1.73 cm
+  - Avg. Marker Max Error = 3.96 cm
+
+Additional information:
+
+  - INFO: The marker "L_HJC_reg" appears in the mocap data, but not on the model.
+  - INFO: The marker "L_forearm" appears in the mocap data, but not on the model.
+  - INFO: The marker "L_humerus" appears in the mocap data, but not on the model.
+  - INFO: The marker "R_HJC_reg" appears in the mocap data, but not on the model.
+  - INFO: The marker "R_forearm" appears in the mocap data, but not on the model.
+  - INFO: The marker "R_humerus" appears in the mocap data, but not on the model.
+  - INFO: The marker "L_mankle" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "L_mknee" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "r_mankle" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "r_mknee" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..

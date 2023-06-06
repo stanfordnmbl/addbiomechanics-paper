@@ -1,0 +1,4 @@
+Marker RMSE across subjects: 1.576 +/- 0.139 cm
+Marker max error across subjects: 3.848 +/- 0.480 cm
+Residual forces across subjects: 12.77 +/- 7.67 N
+Residual torques across subjects: 11.40 +/- 3.15 N-m
