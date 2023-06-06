@@ -1,0 +1,9 @@
+-------------------------------------------
+Trial walk2: Inverse Kinematics Summary
+-------------------------------------------
+
+Automatic processing achieved the following marker errors, averaged
+over all frames of this trial:
+
+  - Avg. Marker RMSE      = 0.54 cm
+  - Avg. Marker Max Error = 1.24 cm

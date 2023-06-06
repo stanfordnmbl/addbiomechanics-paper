@@ -1,0 +1,23 @@
+<OpenSimDocument Version="40000">
+    <ExternalLoads name="subject18_walk2_external_loads">
+        <objects>
+            <ExternalForce name="ExternalForce_RightFoot">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>ground_force_r_v</force_identifier>
+                <point_identifier>ground_force_r_p</point_identifier>
+                <torque_identifier>ground_torque_r_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftFoot">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>ground_force_l_v</force_identifier>
+                <point_identifier>ground_force_l_p</point_identifier>
+                <torque_identifier>ground_torque_l_</torque_identifier>
+            </ExternalForce>
+        </objects>
+        <datafile>grf.mot</datafile>
+    </ExternalLoads>
+</OpenSimDocument>

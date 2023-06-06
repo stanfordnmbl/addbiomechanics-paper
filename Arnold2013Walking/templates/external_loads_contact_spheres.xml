@@ -1,0 +1,103 @@
+<OpenSimDocument Version="40000">
+    <ExternalLoads name="@SUBJECT@_walk2_external_loads">
+        <objects>
+            <ExternalForce name="ExternalForce_RightHeel">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>heel_r_force_v</force_identifier>
+                <point_identifier>heel_r_force_p</point_identifier>
+                <torque_identifier>heel_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftHeel">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>heel_l_force_v</force_identifier>
+                <point_identifier>heel_l_force_p</point_identifier>
+                <torque_identifier>heel_l_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_RightLateralRear">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_rear_r_force_v</force_identifier>
+                <point_identifier>lat_rear_r_force_p</point_identifier>
+                <torque_identifier>lat_rear_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftLateralRear">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_rear_l_force_v</force_identifier>
+                <point_identifier>lat_rear_l_force_p</point_identifier>
+                <torque_identifier>lat_rear_l_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_RightLateralMid">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_mid_r_force_v</force_identifier>
+                <point_identifier>lat_mid_r_force_p</point_identifier>
+                <torque_identifier>lat_mid_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftLateralMid">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_mid_l_force_v</force_identifier>
+                <point_identifier>lat_mid_l_force_p</point_identifier>
+                <torque_identifier>lat_mid_l_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_RightMedialMid">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>med_mid_r_force_v</force_identifier>
+                <point_identifier>med_mid_r_force_p</point_identifier>
+                <torque_identifier>med_mid_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftMedialMid">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>med_mid_l_force_v</force_identifier>
+                <point_identifier>med_mid_l_force_p</point_identifier>
+                <torque_identifier>med_mid_l_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_RightLateralToe">
+                <applied_to_body>toes_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_toe_r_force_v</force_identifier>
+                <point_identifier>lat_toe_r_force_p</point_identifier>
+                <torque_identifier>lat_toe_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftLateralToe">
+                <applied_to_body>toes_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>lat_toe_l_force_v</force_identifier>
+                <point_identifier>lat_toe_l_force_p</point_identifier>
+                <torque_identifier>lat_toe_l_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_RightMedialToe">
+                <applied_to_body>toes_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>med_toe_r_force_v</force_identifier>
+                <point_identifier>med_toe_r_force_p</point_identifier>
+                <torque_identifier>med_toe_r_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ExternalForce_LeftMedialToe">
+                <applied_to_body>toes_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>med_toe_l_force_v</force_identifier>
+                <point_identifier>med_toe_l_force_p</point_identifier>
+                <torque_identifier>med_toe_l_torque_</torque_identifier>
+            </ExternalForce>
+        </objects>
+        <datafile>grf.mot</datafile>
+    </ExternalLoads>
+</OpenSimDocument>
