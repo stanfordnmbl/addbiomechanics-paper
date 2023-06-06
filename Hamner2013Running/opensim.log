@@ -1,0 +1,86 @@
+[2023-03-03 22:59:06.759] [cout] [info] OpenSim: musculoskeletal modeling and simulation.
+
+Usage:
+  opensim-cmd [--library=<path>]... [--log=<level>] <command> [<args>...]
+  opensim-cmd -h | --help
+  opensim-cmd -V | --version
+
+Options:
+  -L <path>, --library <path>  Load a plugin.
+  -o <level>, --log <level>  Logging level.
+  -h, --help     Show this help description.
+  -V, --version  Show the version number.
+
+Available commands:
+  run-tool     Run a tool (e.g., Inverse Kinematics) from an XML setup file.
+  print-xml    Print a template XML file for a Tool or class.
+  info         Show description of properties in an OpenSim class.
+  update-file  Update an .xml file (.osim or setup) to this version's format.
+  viz          Show a model, motion, or data with the Simbody Visualizer.
+
+  Pass -h or --help to any of these commands to learn how to use them.
+
+Description of options:
+  L, library  Load a plugin before executing the requested
+              command. The <path> to the library can be absolute, or
+              relative to the current directory. Make sure to include the
+              library's extension (e.g., .dll, .so, .dylib). If <path>
+              contains spaces, surround <path> in quotes. You can load
+              multiple plugins by repeating this option.
+  o, log      Control the verbosity of OpenSim's console output.
+              Levels: off, critical, error, warn, info, debug, trace.
+              Default: info.
+
+Examples:
+  opensim-cmd run-tool InverseDynamics_Setup.xml
+  opensim-cmd print-xml cmc
+  opensim-cmd info PathActuator
+  opensim-cmd update-file lowerlimb_v3.3.osim lowerlimb_updated.osim
+  opensim-cmd -L C:\Plugins\osimMyCustomForce.dll run-tool CMC_setup.xml
+  opensim-cmd --library ../plugins/libosimMyPlugin.so print-xml MyCustomTool
+  opensim-cmd --library=libosimMyCustomForce.dylib --log=debug info MyCustomForce
+
+
+[2023-03-03 23:20:45.652] [cout] [info] OpenSim: musculoskeletal modeling and simulation.
+
+Usage:
+  opensim-cmd [--library=<path>]... [--log=<level>] <command> [<args>...]
+  opensim-cmd -h | --help
+  opensim-cmd -V | --version
+
+Options:
+  -L <path>, --library <path>  Load a plugin.
+  -o <level>, --log <level>  Logging level.
+  -h, --help     Show this help description.
+  -V, --version  Show the version number.
+
+Available commands:
+  run-tool     Run a tool (e.g., Inverse Kinematics) from an XML setup file.
+  print-xml    Print a template XML file for a Tool or class.
+  info         Show description of properties in an OpenSim class.
+  update-file  Update an .xml file (.osim or setup) to this version's format.
+  viz          Show a model, motion, or data with the Simbody Visualizer.
+
+  Pass -h or --help to any of these commands to learn how to use them.
+
+Description of options:
+  L, library  Load a plugin before executing the requested
+              command. The <path> to the library can be absolute, or
+              relative to the current directory. Make sure to include the
+              library's extension (e.g., .dll, .so, .dylib). If <path>
+              contains spaces, surround <path> in quotes. You can load
+              multiple plugins by repeating this option.
+  o, log      Control the verbosity of OpenSim's console output.
+              Levels: off, critical, error, warn, info, debug, trace.
+              Default: info.
+
+Examples:
+  opensim-cmd run-tool InverseDynamics_Setup.xml
+  opensim-cmd print-xml cmc
+  opensim-cmd info PathActuator
+  opensim-cmd update-file lowerlimb_v3.3.osim lowerlimb_updated.osim
+  opensim-cmd -L C:\Plugins\osimMyCustomForce.dll run-tool CMC_setup.xml
+  opensim-cmd --library ../plugins/libosimMyPlugin.so print-xml MyCustomTool
+  opensim-cmd --library=libosimMyCustomForce.dylib --log=debug info MyCustomForce
+
+

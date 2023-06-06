@@ -1,0 +1,154 @@
+*** This data was generated with AddBiomechanics (www.addbiomechanics.org) ***
+AddBiomechanics was written by Keenon Werling.
+
+Automatic processing achieved the following marker errors (averaged
+over all frames of all trials):
+
+- Avg. Marker RMSE      = 1.54 cm
+- Avg. Max Marker Error = 3.72 cm
+
+Automatic processing reduced the residual loads needed for dynamic
+consistency to the following magnitudes (averaged over all frames of
+all trials):
+
+- Avg. Residual Force  = 4.88 N
+- Avg. Residual Torque = 34.06 N-m
+
+Automatic processing found a new model mass to achieve dynamic
+consistency:
+
+  - Total mass = 70.25 kg (+2.63% change from original 68.45 kg)
+
+Individual body mass changes:
+
+  - pelvis    mass = 11.23 kg (+4.66% change from original 10.72 kg)
+  - femur_r   mass = 9.04 kg (+6.74% change from original 8.47 kg)
+  - tibia_r   mass = 3.61 kg (+6.98% change from original 3.38 kg)
+  - talus_r   mass = 0.43 kg (+371.05% change from original 0.09 kg)
+  - calcn_r   mass = 0.66 kg (-41.80% change from original 1.14 kg)
+  - toes_r    mass = 0.12 kg (-37.70% change from original 0.20 kg)
+  - femur_l   mass = 9.04 kg (+6.74% change from original 8.47 kg)
+  - tibia_l   mass = 3.61 kg (+6.98% change from original 3.38 kg)
+  - talus_l   mass = 0.43 kg (+371.05% change from original 0.09 kg)
+  - calcn_l   mass = 0.66 kg (-41.80% change from original 1.14 kg)
+  - toes_l    mass = 0.12 kg (-37.70% change from original 0.20 kg)
+  - torso     mass = 26.20 kg (+7.23% change from original 24.43 kg)
+  - humerus_r mass = 1.58 kg (-14.81% change from original 1.85 kg)
+  - ulna_r    mass = 0.22 kg (-60.85% change from original 0.55 kg)
+  - radius_r  mass = 0.22 kg (-60.85% change from original 0.55 kg)
+  - hand_r    mass = 0.54 kg (+28.44% change from original 0.42 kg)
+  - humerus_l mass = 1.58 kg (-14.81% change from original 1.85 kg)
+  - ulna_l    mass = 0.22 kg (-60.85% change from original 0.55 kg)
+  - radius_l  mass = 0.22 kg (-60.85% change from original 0.55 kg)
+  - hand_l    mass = 0.54 kg (+28.44% change from original 0.42 kg)
+
+The following trials were processed to perform automatic body scaling,
+marker registration, and residual reduction:
+
+trial: run400
+  - Avg. Marker RMSE      = 1.55 cm
+  - Avg. Marker Max Error = 3.60 cm
+  - Avg. Residual Force   = 5.20 N
+  - Avg. Residual Torque  = 38.59 N-m
+  --> See IK/run400_ik_summary.txt and ID/run400_id_summary.txt for more details.
+
+trial: run200
+  - Avg. Marker RMSE      = 1.51 cm
+  - Avg. Marker Max Error = 3.86 cm
+  - Avg. Residual Force   = 4.80 N
+  - Avg. Residual Torque  = 24.54 N-m
+  --> See IK/run200_ik_summary.txt and ID/run200_id_summary.txt for more details.
+
+trial: run300
+  - Avg. Marker RMSE      = 1.51 cm
+  - Avg. Marker Max Error = 3.74 cm
+  - Avg. Residual Force   = 5.63 N
+  - Avg. Residual Torque  = 27.60 N-m
+  --> See IK/run300_ik_summary.txt and ID/run300_id_summary.txt for more details.
+
+trial: run500
+  - Avg. Marker RMSE      = 1.58 cm
+  - Avg. Marker Max Error = 3.67 cm
+  - Avg. Residual Force   = 3.77 N
+  - Avg. Residual Torque  = 48.01 N-m
+  --> See IK/run500_ik_summary.txt and ID/run500_id_summary.txt for more details.
+
+
+The model file containing optimal body scaling, marker offsets, and
+mass parameters is:
+
+Models/final.osim
+
+This tool works by finding optimal scale factors and marker offsets at
+the same time. If specified, it also runs a second optimization to
+find mass parameters to fit the model dynamics to the ground reaction
+force data.
+
+The model containing the optimal body scaling and marker offsets found
+prior to the dynamics fitting step is:
+
+Models/optimized_scale_and_markers.osim
+
+If you want to manually edit the marker offsets, you can modify the
+<MarkerSet> in "Models/unscaled_but_with_optimized_markers.osim" (by
+default this file contains the marker offsets found by the optimizer).
+If you want to tweak the Scaling, you can edit
+"Models/rescaling_setup.xml". If you change either of these files,
+then run (FROM THE "Models" FOLDER, and not including the leading ">
+"):
+
+ > opensim-cmd run-tool rescaling_setup.xml
+           # This will re-generate Models/optimized_scale_and_markers.osim
+
+
+You do not need to re-run Inverse Kinematics unless you change
+scaling, because the output motion files are already generated for you
+as "*_ik.mot" files for each trial, but you are welcome to confirm our
+results using OpenSim. To re-run Inverse Kinematics with OpenSim, to
+verify the results of AddBiomechanics, you can use the automatically
+generated XML configuration files. Here are the command-line commands
+you can run (FROM THE "IK" FOLDER, and not including the leading "> ")
+to verify IK results for each trial:
+
+ > opensim-cmd run-tool run400_ik_setup.xml
+           # This will create a results file IK/run400_ik_by_opensim.mot
+ > opensim-cmd run-tool run200_ik_setup.xml
+           # This will create a results file IK/run200_ik_by_opensim.mot
+ > opensim-cmd run-tool run300_ik_setup.xml
+           # This will create a results file IK/run300_ik_by_opensim.mot
+ > opensim-cmd run-tool run500_ik_setup.xml
+           # This will create a results file IK/run500_ik_by_opensim.mot
+
+
+To re-run Inverse Dynamics using OpenSim, you can also use
+automatically generated XML configuration files. WARNING: Inverse
+Dynamics in OpenSim uses a different time-step definition to the one
+used in AddBiomechanics (AddBiomechanics uses semi-implicit Euler,
+OpenSim uses splines). This means that your OpenSim inverse dynamics
+results WILL NOT MATCH your AddBiomechanics results, and YOU SHOULD
+NOT EXPECT THEM TO. The following commands should work (FROM THE "ID"
+FOLDER, and not including the leading "> "):
+
+ > opensim-cmd run-tool run400_id_setup.xml
+           # This will create results on time range (0.35s to 2.425s) in file ID/run400_osim_id.sto
+ > opensim-cmd run-tool run200_id_setup.xml
+           # This will create results on time range (0.783333s to 3.133333s) in file ID/run200_osim_id.sto
+ > opensim-cmd run-tool run300_id_setup.xml
+           # This will create results on time range (0.508333s to 2.733333s) in file ID/run300_osim_id.sto
+ > opensim-cmd run-tool run500_id_setup.xml
+           # This will create results on time range (0.258333s to 2.216667s) in file ID/run500_osim_id.sto
+
+
+The original unscaled model file is present in:
+
+Models/unscaled_generic.osim
+
+There is also an unscaled model, with markers moved to spots found by
+this tool, at:
+
+Models/unscaled_but_with_optimized_markers.osim
+
+If you encounter errors, please submit a post to the AddBiomechanics
+user forum on SimTK.org :
+
+   https://simtk.org/projects/addbiomechanics

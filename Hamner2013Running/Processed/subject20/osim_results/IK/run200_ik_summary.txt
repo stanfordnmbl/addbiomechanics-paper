@@ -1,0 +1,38 @@
+--------------------------------------------
+Trial run200: Inverse Kinematics Summary
+--------------------------------------------
+
+Automatic processing achieved the following marker errors, averaged
+over all frames of this trial:
+
+  - Avg. Marker RMSE      = 1.62 cm
+  - Avg. Marker Max Error = 4.16 cm
+
+Markers with large root-mean-square error:
+
+  - WARNING: Marker CLAV has RMSE = 4.17 cm!
+
+Additional information:
+
+  - INFO: The marker "LAJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LASH" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LEJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LHJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LKJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LLFC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LLMAL" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LMFC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LMMAL" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LPSH" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "LSJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RAJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RASH" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "REJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RHJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RKJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RLFC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RLMAL" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RMFC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RMMAL" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RPSH" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..
+  - INFO: The marker "RSJC" appears in the model, but not in the mocap data. This generally happens because the marker is a virtual marker. We ignore virtual markers, so this is not a problem, just a heads up..

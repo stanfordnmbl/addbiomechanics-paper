@@ -1,0 +1,23 @@
+<OpenSimDocument Version="40000">
+    <ExternalLoads name="run300">
+        <objects>
+            <ExternalForce name="ForcePlate_calcn_r">
+                <applied_to_body>calcn_r</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>R_ground_force_v</force_identifier>
+                <point_identifier>R_ground_force_p</point_identifier>
+                <torque_identifier>R_ground_torque_</torque_identifier>
+            </ExternalForce>
+            <ExternalForce name="ForcePlate_calcn_l">
+                <applied_to_body>calcn_l</applied_to_body>
+                <force_expressed_in_body>ground</force_expressed_in_body>
+                <point_expressed_in_body>ground</point_expressed_in_body>
+                <force_identifier>L_ground_force_v</force_identifier>
+                <point_identifier>L_ground_force_p</point_identifier>
+                <torque_identifier>L_ground_torque_</torque_identifier>
+            </ExternalForce>
+        </objects>
+        <datafile>../../../../../subject01_run300_cycle3_grf.mot</datafile>
+    </ExternalLoads>
+</OpenSimDocument>

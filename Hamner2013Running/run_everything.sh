@@ -1,0 +1,11 @@
+#!/bin/bash
+
+python formatAndCopyData.py
+python fillAndCopySubjectJSON.py
+python processFormattedData.py
+python computeResultsAcrossSubjects.py
+#python plotMarkerFittingVersusDynamicsFitting.py
+python processAddBiomechanicsResults.py
+python processHamnerResults.py
+python plotMarkerErrorsAndResiduals.py
+python plotJointAnglesAndTorques.py
