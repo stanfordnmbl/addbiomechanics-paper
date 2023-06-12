@@ -61,8 +61,11 @@ axes.append(fig.add_subplot(gs[0, 4:10]))
 ylabel_fs = 8
 xlabel_fs = 9
 yticklabel_fs = 7
-color_hamner = '#2e2e2e'
-color_addbio = '#7798ce'
+colors_fpath = os.path.join('..', 'colors.json')
+f = open(colors_fpath)
+colors = json.load(f)
+color_hamner = colors['original']
+color_addbio = colors['addbio']
 width = 0.3
 
 # Plot the marker RMSE.

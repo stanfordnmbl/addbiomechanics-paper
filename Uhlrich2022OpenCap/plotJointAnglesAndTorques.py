@@ -8,8 +8,12 @@ import json
 
 plt.rcParams['mathtext.fontset'] = 'cm'
 plt.rcParams['mathtext.rm'] = 'serif'
-color_opencap = '#2e2e2e'
-color_addbio = '#7798ce'
+
+colors_fpath = os.path.join('..', 'colors.json')
+f = open(colors_fpath)
+colors = json.load(f)
+color_opencap = colors['original']
+color_addbio = colors['addbio']
 
 demographics_df = pd.read_csv('demographics.csv')
 subjects = demographics_df['subject']
@@ -53,6 +57,9 @@ for isubj, (subject, mass) in enumerate(zip(subjects, masses)):
                 trial_tag = 'DJ4'
             elif os.path.isdir(os.path.join('Formatted', subject, 'trials', 'DJ5')):
                 trial_tag = 'DJ5'
+
+        if subject == 'subject5' and trial == 'DJ':
+            trial_tag = 'DJ2'
 
         # Joint angles
         # ------------

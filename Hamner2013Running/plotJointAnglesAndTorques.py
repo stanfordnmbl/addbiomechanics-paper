@@ -9,8 +9,12 @@ from dictionaries import trial_dict, subject_dict, init_cycle_dict, second_cycle
 
 plt.rcParams['mathtext.fontset'] = 'cm'
 plt.rcParams['mathtext.rm'] = 'serif'
-color_hamner = '#2e2e2e'
-color_addbio = '#7798ce'
+
+colors_fpath = os.path.join('..', 'colors.json')
+f = open(colors_fpath)
+colors = json.load(f)
+color_hamner = colors['original']
+color_addbio = colors['addbio']
 
 demographics_df = pd.read_csv('demographics.csv')
 subjects = demographics_df['subject']

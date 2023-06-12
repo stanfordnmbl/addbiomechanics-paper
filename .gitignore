@@ -1,5 +1,7 @@
 *.idea
-*__py_cache__
+Uhlrich2022OpenCap/__pycache__/
+Hamner2013Running/__pycache__/
+Arnold2013Walking/__pycache__/
 
 Hamner2013Running/Raw/**/cmc*
 Hamner2013Running/Raw/**/IAA*

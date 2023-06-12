@@ -115,7 +115,10 @@ axes.append(fig.add_subplot(gs[0, 9:13]))
 ylabel_fs = 8
 xlabel_fs = 9
 yticklabel_fs = 7
-color = '#0066ff'
+colors_fpath = os.path.join('..', 'colors.json')
+f = open(colors_fpath)
+colors = json.load(f)
+color = colors['addbio']
 width = 0.3
 axes[0].bar(0, np.mean(ik_rms_errors), width, color=color)
 plot_errorbar(axes[0], 0, np.mean(ik_rms_errors), np.std(ik_rms_errors))

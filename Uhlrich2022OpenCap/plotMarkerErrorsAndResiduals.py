@@ -60,8 +60,11 @@ axes.append(fig.add_subplot(gs[0, 4:10]))
 ylabel_fs = 8
 xlabel_fs = 9
 yticklabel_fs = 7
-color_opencap = '#2e2e2e'
-color_addbio = '#7798ce'
+colors_fpath = os.path.join('..', 'colors.json')
+f = open(colors_fpath)
+colors = json.load(f)
+color_opencap = colors['original']
+color_addbio = colors['addbio']
 width = 0.3
 
 # Plot the marker RMSE.
@@ -123,3 +126,19 @@ for ax in axes:
 # Save figure.
 # fig.tight_layout()
 fig.savefig(os.path.join('figures', 'markers_residuals_addbio_vs_opencap.png'), dpi=500, bbox_inches='tight')
+
+# Print the mean and standard deviation of the residuals.
+print('Uhlrich et al. (2022) residuals:')
+print('  Forces:  %.2f +/- %.2f %%' % (mean_rms_forces_opencap, std_rms_forces_opencap))
+print('  Moments: %.2f +/- %.2f %%' % (mean_rms_moments_opencap, std_rms_moments_opencap))
+
+print('AddBiomechanics residuals:')
+print('  Forces:  %.2f +/- %.2f %%' % (mean_rms_forces_addbio, std_rms_forces_addbio))
+print('  Moments: %.2f +/- %.2f %%' % (mean_rms_moments_addbio, std_rms_moments_addbio))
+
+# Print the mean and standard deviation of the marker errors.
+print('Uhlrich et al. (2022) marker errors:')
+print('  Average:  %.2f +/- %.2f mm' % (np.mean(marker_rmse_opencap), np.std(marker_rmse_opencap)))
+
+print('AddBiomechanics marker errors:')
+print('  Average:  %.2f +/- %.2f mm' % (np.mean(marker_rmse_addbio), np.std(marker_rmse_addbio)))
