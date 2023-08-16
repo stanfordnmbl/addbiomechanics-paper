@@ -16,7 +16,7 @@ nColumns=4
 nRows=91
 DataType=double
 version=3
-OpenSimVersion=4.4-2022-10-11-798caa840
+OpenSimVersion=4.4.1-2023-07-13-710e13be5
 endheader
 time	center_of_mass_X	center_of_mass_Y	center_of_mass_Z
 0.88	-0.67723745	1.51843311	-0.60979132

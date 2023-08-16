@@ -49,6 +49,7 @@ masses = demographics_df['weight (kg)']
 heights = demographics_df['height (m)']
 
 marker_rmse = np.zeros((len(subjects)))
+marker_max = np.zeros((len(subjects)))
 for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
 
     # Create subject folder.
@@ -76,6 +77,7 @@ for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
 
     # Loop over all trials for this subject
     marker_rmse_trials = np.zeros((len(trials)))
+    marker_max_trials = np.zeros((len(trials)))
     for itrial, trial in enumerate(trials):
 
         # Create Analysis folder
@@ -134,11 +136,19 @@ for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
                                            f'{trial}_ik_marker_errors.sto')
         marker_errors = osim.TimeSeriesTable(marker_errors_fpath)
         marker_rmse_trials[itrial] = np.mean(marker_errors.getDependentColumn('marker_error_RMS').to_numpy())
+        marker_max_trials[itrial] = np.max(marker_errors.getDependentColumn('marker_error_RMS').to_numpy())
 
     marker_rmse[isubj] = np.mean(marker_rmse_trials)
+    marker_max[isubj] = np.max(marker_max_trials)
 
 # Save marker_rmse_subject to a CSV file
 with open('marker_rmse_opencap.csv', 'w') as f:
     f.write('Subject,Marker RMSE (m)\n')
     for subject, rmse in zip(subjects, marker_rmse):
         f.write(f'{subject},{rmse}\n')
+
+# Save marker_max_subject to a CSV file
+with open('marker_max_opencap.csv', 'w') as f:
+    f.write('Subject,Marker Max Error (m)\n')
+    for subject, maxError in zip(subjects, marker_max):
+        f.write(f'{subject},{maxError}\n')

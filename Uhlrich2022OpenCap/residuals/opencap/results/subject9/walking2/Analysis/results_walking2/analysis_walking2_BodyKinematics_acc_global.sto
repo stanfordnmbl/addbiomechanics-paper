@@ -17,7 +17,7 @@ If the header above contains a line with 'inDegrees', this indicates whether rot
 
 endheader
 time	center_of_mass_X	center_of_mass_Y	center_of_mass_Z
-      0.00000000	      0.00000000	     -9.80665000	     -0.00000000
+      0.00000000	     -0.00000000	     -9.80665000	      0.00000000
       0.01000000	      0.10229630	     -9.31709547	      0.12074406
       0.02000000	      0.10411890	     -9.02059835	      0.15360708
       0.03000000	      0.09811309	     -8.65579411	      0.18964188

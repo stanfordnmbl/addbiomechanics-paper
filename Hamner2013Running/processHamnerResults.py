@@ -148,6 +148,8 @@ heights = demographics_df['height (m)']
 trials = ['run200', 'run300', 'run400', 'run500']
 marker_rmse = np.zeros((len(subjects), len(trials)))
 marker_rmse_subject = np.zeros((len(subjects)))
+marker_max = np.zeros((len(subjects), len(trials)))
+marker_max_subject = np.zeros((len(subjects)))
 for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
     # Model path
     model_fpath = os.path.join(hamner_fpath, subject, 'model.osim')
@@ -173,6 +175,7 @@ for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
         cycle_dicts = [init_cycle_dict, second_cycle_dict, final_cycle_dict]
         cycles = [1, 2, 3]
         marker_rmse_cycles = list()
+        marker_max_cycles = list()
         for cycle, cycle_dict in zip(cycles, cycle_dicts):
             # update cycle number, if needed
             if subject in cycle_dict.keys():
@@ -260,13 +263,25 @@ for isubj, (subject, mass, height) in enumerate(zip(subjects, masses, heights)):
             rms = np.sqrt(np.mean(np.square(errors), axis=1))
             marker_rmse_cycles.append(np.mean(rms))
 
+            # Compute max error for each row in errors and average over all rows
+            maxErr = np.max(errors, axis=1)
+            marker_max_cycles.append(np.mean(maxErr))
+
         marker_rmse[isubj, itrial] = np.mean(marker_rmse_cycles)
+        marker_max[isubj, itrial] = np.mean(marker_max_cycles)
 
     # Compute average marker RMSE for each subject
     marker_rmse_subject[isubj] = np.mean(marker_rmse[isubj, :])
+    marker_max_subject[isubj] = np.mean(marker_max[isubj, :])
 
 # Save marker_rmse_subject to a CSV file
 with open('marker_rmse_rra.csv', 'w') as f:
     f.write('Subject,Marker RMSE (m)\n')
     for subject, rmse in zip(subjects, marker_rmse_subject):
         f.write(f'{subject},{rmse}\n')
+
+# Save marker_max_subject to a CSV file
+with open('marker_max_rra.csv', 'w') as f:
+    f.write('Subject,Marker Max Error (m)\n')
+    for subject, maxErr in zip(subjects, marker_max_subject):
+        f.write(f'{subject},{maxErr}\n')

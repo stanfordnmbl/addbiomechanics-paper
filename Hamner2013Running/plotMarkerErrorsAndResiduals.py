@@ -5,9 +5,11 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import json
+import scipy.stats as stats
 
 plt.rcParams['mathtext.fontset'] = 'cm'
 plt.rcParams['mathtext.rm'] = 'serif'
+
 
 # Add errorbars to a bar chart. For positive values, the errorbars will
 # be above the bars, and for negative values, the errorbars will be
@@ -25,6 +27,73 @@ def plot_errorbar(ax, x, y, yerr):
         cl.set_markersize(8)
 
 
+# https://stackoverflow.com/questions/11517986/indicating-the-statistically-significant-difference-in-bar-graph
+def barplot_annotate_brackets(axis, num1, num2, data, center, height, yerr=None, dh=.05, barh=.05, fs=None,
+                              maxasterix=None):
+    """
+    Annotate barplot with p-values.
+
+    :param axis: axis of bar plot
+    :param num1: number of left bar to put bracket over
+    :param num2: number of right bar to put bracket over
+    :param data: string to write or number for generating asterixes
+    :param center: centers of all bars (like plt.bar() input)
+    :param height: heights of all bars (like plt.bar() input)
+    :param yerr: yerrs of all bars (like plt.bar() input)
+    :param dh: height offset over bar / bar + yerr in axes coordinates (0 to 1)
+    :param barh: bar height in axes coordinates (0 to 1)
+    :param fs: font size
+    :param maxasterix: maximum number of asterixes to write (for very small p-values)
+    """
+
+    if type(data) is str:
+        text = data
+    else:
+        # * is p < 0.05
+        # ** is p < 0.005
+        # *** is p < 0.0005
+        # etc.
+        text = ''
+        p = .05
+
+        while data < p:
+            text += '*'
+            p /= 10.
+
+            if maxasterix and len(text) == maxasterix:
+                break
+
+        if len(text) == 0:
+            text = 'n. s.'
+
+    lx, ly = center[num1], height[num1]
+    rx, ry = center[num2], height[num2]
+
+    if yerr:
+        ly += yerr[num1]
+        ry += yerr[num2]
+
+    ax_y0, ax_y1 = axis.get_ylim()
+    dh *= (ax_y1 - ax_y0)
+    barh *= (ax_y1 - ax_y0)
+
+    y = max(ly, ry) + dh
+
+    barx = [lx, lx, rx, rx]
+    bary = [y, y+barh, y+barh, y]
+    mid = ((lx+rx)/2, y+barh+0.01)
+
+    color = 'black'
+    axis.plot(barx, bary, c=color, lw=0.5)
+
+    kwargs = dict(ha='center', va='bottom')
+    kwargs['color'] = color
+    if fs is not None:
+        kwargs['fontsize'] = fs
+
+    axis.text(*mid, text, **kwargs)
+
+
 demographics_df = pd.read_csv('demographics.csv')
 subjects = demographics_df['subject']
 masses = demographics_df['weight (kg)']
@@ -34,6 +103,8 @@ dynfit_fpath = os.path.join('Processed')
 rad2deg = 180 / 3.14159
 marker_rmse_addbio = np.zeros(len(subjects))
 marker_rmse_hamner = np.zeros(len(subjects))
+marker_max_addbio = np.zeros(len(subjects))
+marker_max_hamner = np.zeros(len(subjects))
 for isubj, subject in enumerate(subjects):
 
     # Marker errors (Hamner)
@@ -42,12 +113,17 @@ for isubj, subject in enumerate(subjects):
     marker_rmse_rra_df = marker_rmse_rra_df.set_index('Subject')
     marker_rmse_hamner[isubj] = 100.0*marker_rmse_rra_df.loc[subject, 'Marker RMSE (m)']
 
+    marker_max_rra_df = pd.read_csv('marker_max_rra.csv')
+    marker_max_rra_df = marker_max_rra_df.set_index('Subject')
+    marker_max_hamner[isubj] = 100.0*marker_max_rra_df.loc[subject, 'Marker Max Error (m)']
+
     # Marker errors (AddBiomechanics)
     # -------------------------------
     results_fpath = os.path.join('Processed', subject, '_results.json')
     f = open(results_fpath)
     results = json.load(f)
     marker_rmse_addbio[isubj] = 100.0 * results['autoAvgRMSE']
+    marker_max_addbio[isubj] = 100.0 * results['autoAvgMax']
 
 
 # Create a figure with four subplots.
@@ -76,10 +152,14 @@ plot_errorbar(axes[0], 0 + 0.5*width, np.mean(marker_rmse_addbio), np.std(marker
 axes[0].set_ylabel(r'Average RMS Error $[cm]$', fontsize=ylabel_fs)
 axes[0].set_xticks([0])
 axes[0].set_xticklabels(['Marker Error'], fontsize=xlabel_fs)
-axes[0].set_ylim([0, 5])
-axes[0].set_yticks([0, 1, 2, 3, 4, 5])
-axes[0].set_yticklabels([0, 1, 2, 3, 4, 5], fontsize=yticklabel_fs)
+axes[0].set_ylim([0, 6])
+axes[0].set_yticks([0, 1, 2, 3, 4, 5, 6])
+axes[0].set_yticklabels([0, 1, 2, 3, 4, 5, 6], fontsize=yticklabel_fs)
 axes[0].set_xlim([-0.5, 0.5])
+barplot_annotate_brackets(axes[0], 0, 1, 2.30e-08, [-0.5*width, 0.5*width],
+                          [np.mean(marker_rmse_hamner), np.mean(marker_rmse_addbio)],
+                          yerr=[np.std(marker_rmse_hamner), np.std(marker_rmse_addbio)],
+                          barh=0.01, fs=5, maxasterix=2)
 
 # Plot the residuals
 residuals_addbio_df = pd.read_csv('residuals_summary_addbio.csv')
@@ -121,6 +201,15 @@ legend = axes[1].legend([h_hamner, h_addbio, h_hicks],
 labels = legend.get_texts()
 labels[2].set_fontsize(6)
 labels[2].set_alpha(0.75)
+barplot_annotate_brackets(axes[1], 0, 1, 4.64e-02, [-0.5*width, 0.5*width],
+                          [mean_rms_forces_hamner, mean_rms_forces_addbio],
+                          yerr=[std_rms_forces_hamner, std_rms_forces_addbio],
+                          barh=0.01, fs=5, maxasterix=2)
+
+barplot_annotate_brackets(axes[1], 0, 1, 3.46e-08, [0.75 - 0.5*width, 0.75 + 0.5*width],
+                          [mean_rms_moments_hamner, mean_rms_moments_addbio],
+                          yerr=[std_rms_moments_hamner, std_rms_moments_addbio],
+                          barh=0.01, fs=5, maxasterix=2)
 
 # Remove top and right spines.
 for ax in axes:
@@ -140,9 +229,37 @@ print('AddBiomechanics residuals:')
 print('  Forces:  %.2f +/- %.2f %%' % (mean_rms_forces_addbio, std_rms_forces_addbio))
 print('  Moments: %.2f +/- %.2f %%' % (mean_rms_moments_addbio, std_rms_moments_addbio))
 
-# Print the mean and standard deviation of the marker errors.
-print('Hamner et al. (2013) marker errors:')
-print('  Average:  %.2f +/- %.2f mm' % (np.mean(marker_rmse_hamner), np.std(marker_rmse_hamner)))
+# Print the mean and standard deviation of the RMS marker errors.
+print('Hamner et al. (2013) RMS marker errors:')
+print('  Average:  %.2f +/- %.2f cm' % (np.mean(marker_rmse_hamner), np.std(marker_rmse_hamner)))
 
-print('AddBiomechanics marker errors:')
-print('  Average:  %.2f +/- %.2f mm' % (np.mean(marker_rmse_addbio), np.std(marker_rmse_addbio)))
+print('AddBiomechanics RMS marker errors:')
+print('  Average:  %.2f +/- %.2f cm' % (np.mean(marker_rmse_addbio), np.std(marker_rmse_addbio)))
+
+# Print the mean and standard deviation of the max marker errors.
+print('Hamner et al. (2013) max marker errors:')
+print('  Average:  %.2f +/- %.2f cm' % (np.mean(marker_max_hamner), np.std(marker_max_hamner)))
+
+print('AddBiomechanics max marker errors:')
+print('  Average:  %.2f +/- %.2f cm' % (np.mean(marker_max_addbio), np.std(marker_max_addbio)))
+
+# Compute a paired t-test between marker_rmse_hamner and marker_rmse_addbio.
+t_stat, p_value = stats.ttest_rel(marker_rmse_hamner, marker_rmse_addbio)
+print('Paired t-test between marker errors: ')
+print('  t-statistic: %.2f' % t_stat)
+print('  p-value:     %.2e' % p_value)
+
+# Compute a paired t-test between residuals_hamner and residuals_addbio.
+t_stat, p_value = stats.ttest_rel(residuals_hamner_df['kinetic_normalized_rms_forces'],
+                                  residuals_addbio_df['kinetic_normalized_rms_forces'])
+print('Paired t-test between force residuals: ')
+print('  t-statistic: %.2f' % t_stat)
+print('  p-value:     %.2e' % p_value)
+
+t_stat, p_value = stats.ttest_rel(residuals_hamner_df['kinetic_normalized_rms_moments'],
+                                  residuals_addbio_df['kinetic_normalized_rms_moments'])
+print('Paired t-test between moment residuals: ')
+print('  t-statistic: %.2f' % t_stat)
+print('  p-value:     %.2e' % p_value)
+
+
